@@ -46,10 +46,10 @@
     <string name="tpl_unknown_silence">Silenzia gli sconosciuti</string>
 
     <!-- Descrizione delle condizioni -->
-    <string name="cond_countries">Chiamate da %1$s</string>
-    <string name="cond_countries_more">Chiamate da %1$s e da altri %2$d paesi</string>
+    <string name="cond_countries">Chiamate da: %1$s</string>
+    <string name="cond_countries_more">Chiamate da: %1$s e altri %2$d paesi</string>
     <string name="cond_countries_empty">Nessun paese selezionato</string>
-    <string name="cond_foreign">Chiamate non provenienti da %1$s</string>
+    <string name="cond_foreign">Chiamate dall\'estero (paese di riferimento: %1$s)</string>
     <string name="cond_prefix">Numeri che iniziano con %1$s</string>
     <string name="cond_hidden">Numeri nascosti</string>
     <string name="cond_any">Qualsiasi numero sconosciuto</string>
@@ -73,7 +73,7 @@
     <string name="type_countries">Paesi specifici</string>
     <string name="type_countries_desc">Chiamate dai paesi che scegli</string>
     <string name="type_foreign">Internazionali</string>
-    <string name="type_foreign_desc">Tutte le chiamate non provenienti da %1$s</string>
+    <string name="type_foreign_desc">Tutte le chiamate da paesi diversi da: %1$s</string>
     <string name="type_prefix">Prefisso</string>
     <string name="type_prefix_desc">Numeri che iniziano con alcune cifre</string>
     <string name="type_hidden">Numeri nascosti</string>

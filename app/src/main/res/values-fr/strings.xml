@@ -46,10 +46,10 @@
     <string name="tpl_unknown_silence">Silencer les inconnus</string>
 
     <!-- Description des conditions -->
-    <string name="cond_countries">Appels de %1$s</string>
-    <string name="cond_countries_more">Appels de %1$s et %2$d de plus</string>
+    <string name="cond_countries">Appels de : %1$s</string>
+    <string name="cond_countries_more">Appels de : %1$s et %2$d autres</string>
     <string name="cond_countries_empty">Aucun pays sélectionné</string>
-    <string name="cond_foreign">Appels hors de %1$s</string>
+    <string name="cond_foreign">Appels hors %1$s</string>
     <string name="cond_prefix">Numéros commençant par %1$s</string>
     <string name="cond_hidden">Numéros masqués</string>
     <string name="cond_any">Tout numéro inconnu</string>
@@ -73,7 +73,7 @@
     <string name="type_countries">Pays précis</string>
     <string name="type_countries_desc">Appels des pays que tu choisis</string>
     <string name="type_foreign">Internationaux</string>
-    <string name="type_foreign_desc">Tous les appels qui ne viennent pas de %1$s</string>
+    <string name="type_foreign_desc">Tous les appels hors %1$s</string>
     <string name="type_prefix">Préfixe</string>
     <string name="type_prefix_desc">Numéros commençant par certains chiffres</string>
     <string name="type_hidden">Numéros masqués</string>

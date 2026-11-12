@@ -46,10 +46,10 @@
     <string name="tpl_unknown_silence">Unbekannte stummschalten</string>
 
     <!-- Beschreibung der Bedingungen -->
-    <string name="cond_countries">Anrufe aus %1$s</string>
-    <string name="cond_countries_more">Anrufe aus %1$s und %2$d weiteren</string>
+    <string name="cond_countries">Anrufe aus: %1$s</string>
+    <string name="cond_countries_more">Anrufe aus: %1$s und %2$d weiteren Ländern</string>
     <string name="cond_countries_empty">Kein Land ausgewählt</string>
-    <string name="cond_foreign">Anrufe nicht aus %1$s</string>
+    <string name="cond_foreign">Anrufe aus dem Ausland (Heimatland: %1$s)</string>
     <string name="cond_prefix">Nummern, die mit %1$s beginnen</string>
     <string name="cond_hidden">Unterdrückte Nummern</string>
     <string name="cond_any">Jede unbekannte Nummer</string>
@@ -73,7 +73,7 @@
     <string name="type_countries">Bestimmte Länder</string>
     <string name="type_countries_desc">Anrufe aus den Ländern deiner Wahl</string>
     <string name="type_foreign">International</string>
-    <string name="type_foreign_desc">Alle Anrufe, die nicht aus %1$s kommen</string>
+    <string name="type_foreign_desc">Alle Anrufe aus anderen Ländern als: %1$s</string>
     <string name="type_prefix">Vorwahl</string>
     <string name="type_prefix_desc">Nummern, die mit bestimmten Ziffern beginnen</string>
     <string name="type_hidden">Unterdrückte Nummern</string>

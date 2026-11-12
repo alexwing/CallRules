@@ -47,10 +47,10 @@
     <string name="tpl_unknown_silence">Silence unknown callers</string>
 
     <!-- Condition descriptions -->
-    <string name="cond_countries">Calls from %1$s</string>
-    <string name="cond_countries_more">Calls from %1$s and %2$d more</string>
+    <string name="cond_countries">Calls from: %1$s</string>
+    <string name="cond_countries_more">Calls from: %1$s and %2$d more</string>
     <string name="cond_countries_empty">No country selected</string>
-    <string name="cond_foreign">Calls from outside %1$s</string>
+    <string name="cond_foreign">International calls (home: %1$s)</string>
     <string name="cond_prefix">Numbers starting with %1$s</string>
     <string name="cond_hidden">Hidden numbers</string>
     <string name="cond_any">Any unknown number</string>
@@ -74,7 +74,7 @@
     <string name="type_countries">Specific countries</string>
     <string name="type_countries_desc">Calls from the countries you choose</string>
     <string name="type_foreign">International</string>
-    <string name="type_foreign_desc">Every call not from %1$s</string>
+    <string name="type_foreign_desc">Every call from outside your home country (%1$s)</string>
     <string name="type_prefix">Prefix</string>
     <string name="type_prefix_desc">Numbers starting with some digits</string>
     <string name="type_hidden">Hidden numbers</string>
