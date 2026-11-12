@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Filtro de chamadas</string>
+
+    <!-- Mosaico das configurações rápidas -->
+    <string name="tile_label">Filtro de chamadas</string>
+    <string name="tile_on">Ativo</string>
+    <string name="tile_off">Em pausa</string>
+
+    <!-- Navegação -->
+    <string name="tab_rules">Regras</string>
+    <string name="tab_history">Histórico</string>
+    <string name="title_rules">Regras</string>
+    <string name="title_history">Histórico</string>
+    <string name="settings">Configurações</string>
+    <string name="new_rule">Nova regra</string>
+    <string name="back">Voltar</string>
+    <string name="close">Fechar</string>
+    <string name="save">Guardar</string>
+    <string name="cancel">Cancelar</string>
+    <string name="delete">Eliminar</string>
+    <string name="remove">Remover</string>
+    <string name="undo">Desfazer</string>
+    <string name="more_options">Mais opções</string>
+    <string name="move_up">Mover para cima</string>
+    <string name="move_down">Mover para baixo</string>
+    <string name="rule_deleted">Regra eliminada</string>
+
+    <!-- Estado -->
+    <string name="status_inactive_title">O filtro está desativado</string>
+    <string name="status_inactive_body">O Android não está a enviar chamadas para esta app. Defina-a como app de identificação de chamadas e de spam para que as regras funcionem.</string>
+    <string name="status_activate">Ativar</string>
+    <string name="status_on">Filtragem ativa</string>
+    <string name="status_off">Filtragem em pausa</string>
+    <string name="status_home">País de origem: %1$s</string>
+
+    <!-- Lista de regras -->
+    <string name="rules_hint">As regras são verificadas de cima para baixo e vence a primeira que corresponder. Se nenhuma corresponder, a chamada passa. As chamadas dos seus contactos nunca são filtradas.</string>
+    <string name="rules_empty_title">Sem regras</string>
+    <string name="rules_empty_body">Neste momento, todas as chamadas passam. Crie uma regra ou comece com uma sugestão.</string>
+    <string name="rule_position">Regra %1$d · %2$s</string>
+    <string name="rule_disabled">desativada</string>
+    <string name="quick_add">Adição rápida</string>
+    <string name="tpl_national">Só chamadas nacionais</string>
+    <string name="tpl_hidden">Bloquear números ocultos</string>
+    <string name="tpl_unknown_silence">Silenciar desconhecidos</string>
+
+    <!-- Descrição das condições -->
+    <string name="cond_countries">Chamadas de %1$s</string>
+    <string name="cond_countries_more">Chamadas de %1$s e mais %2$d</string>
+    <string name="cond_countries_empty">Nenhum país selecionado</string>
+    <string name="cond_foreign">Chamadas de fora de %1$s</string>
+    <string name="cond_prefix">Números que começam por %1$s</string>
+    <string name="cond_hidden">Números ocultos</string>
+    <string name="cond_any">Qualquer número desconhecido</string>
+
+    <!-- Ações -->
+    <string name="action_block">Bloquear</string>
+    <string name="action_silence">Silenciar</string>
+    <string name="action_allow">Permitir</string>
+    <string name="action_block_past">Bloqueada</string>
+    <string name="action_silence_past">Silenciada</string>
+    <string name="action_allow_past">Permitida</string>
+    <string name="action_block_desc">A chamada é rejeitada sem que o telefone toque.</string>
+    <string name="action_silence_desc">A chamada chega, mas o telefone não toca nem vibra. Ainda pode atendê-la.</string>
+    <string name="action_allow_desc">A chamada passa normalmente. Serve para exceções: coloque-a acima da regra que quer ignorar.</string>
+
+    <!-- Editor -->
+    <string name="editor_new">Nova regra</string>
+    <string name="editor_edit">Editar regra</string>
+    <string name="editor_which_calls">Quais chamadas</string>
+    <string name="editor_what_to_do">O que fazer</string>
+    <string name="type_countries">Países específicos</string>
+    <string name="type_countries_desc">Chamadas dos países que escolher</string>
+    <string name="type_foreign">Internacionais</string>
+    <string name="type_foreign_desc">Todas as chamadas que não sejam de %1$s</string>
+    <string name="type_prefix">Prefixo</string>
+    <string name="type_prefix_desc">Números que começam por alguns dígitos</string>
+    <string name="type_hidden">Números ocultos</string>
+    <string name="type_hidden_desc">Chamadas sem número visível</string>
+    <string name="type_any">Qualquer número</string>
+    <string name="type_any_desc">Todas as chamadas que não vêm dos seus contactos</string>
+    <string name="countries_add">Adicionar países</string>
+    <string name="countries_required">Escolha pelo menos um país</string>
+    <string name="prefix_label">Prefixo</string>
+    <string name="prefix_help">Ex.: +39, +44 7 ou 900. Sem «+», a comparação é feita com o número nacional.</string>
+    <string name="delete_rule_title">Eliminar esta regra?</string>
+
+    <!-- Seletor de países -->
+    <string name="country_picker_title">Escolher países</string>
+    <string name="country_picker_title_single">País de origem</string>
+    <string name="country_search">Pesquisar país ou prefixo</string>
+    <string name="done_count">Concluído (%1$d)</string>
+    <string name="auto_country">Automático · %1$s</string>
+    <string name="auto_country_unknown">Automático</string>
+    <string name="no_results">Sem resultados</string>
+
+    <!-- Histórico -->
+    <string name="history_empty_title">Sem chamadas filtradas</string>
+    <string name="history_empty_body">Cada chamada que passa pelo filtro aparece aqui, com a regra que foi aplicada.</string>
+    <string name="history_no_rule">Nenhuma regra correspondeu</string>
+    <string name="history_filter_off">Filtragem em pausa</string>
+    <string name="hidden_number">Número oculto</string>
+    <string name="clear_history">Limpar histórico</string>
+    <string name="clear_history_title">Limpar o histórico?</string>
+    <string name="clear_history_body">Isto apaga o histórico desta app. O histórico de chamadas do telefone não é alterado.</string>
+    <string name="clear">Limpar</string>
+
+    <!-- Configurações -->
+    <string name="section_filter">Filtragem</string>
+    <string name="section_system">Sistema</string>
+    <string name="set_filtering">Filtragem ativa</string>
+    <string name="set_filtering_desc">Desative para deixar passar todas as chamadas sem perder as regras. Também disponível nas configurações rápidas.</string>
+    <string name="set_calllog">Manter as chamadas bloqueadas no histórico de chamadas</string>
+    <string name="set_calllog_desc">As chamadas bloqueadas aparecem no histórico de chamadas do telefone.</string>
+    <string name="set_home">País de origem</string>
+    <string name="set_home_auto">%1$s · pelo cartão SIM</string>
+    <string name="set_home_manual">%1$s · definido manualmente</string>
+    <string name="set_language">Idioma</string>
+    <string name="set_language_desc">Segue o idioma do sistema. Pode escolher outro apenas para esta app.</string>
+    <string name="set_role">App de filtragem de chamadas</string>
+    <string name="set_role_active">Esta app filtra as suas chamadas</string>
+    <string name="set_role_inactive">Não está ativa. Toque para a ativar.</string>
+    <string name="set_about">Versão</string>
+</resources>

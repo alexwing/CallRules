@@ -2,6 +2,8 @@ package com.icaria.callrules.ui
 
 import android.content.ActivityNotFoundException
 import android.content.Intent
+import android.net.Uri
+import android.os.Build
 import android.provider.Settings as SystemSettings
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
@@ -16,6 +18,7 @@ import androidx.compose.material.icons.automirrored.rounded.ReceiptLong
 import androidx.compose.material.icons.rounded.Info
 import androidx.compose.material.icons.rounded.Public
 import androidx.compose.material.icons.rounded.Shield
+import androidx.compose.material.icons.rounded.Translate
 import androidx.compose.material.icons.rounded.Tune
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.HorizontalDivider
@@ -108,6 +111,25 @@ fun SettingsScreen(
 
             HorizontalDivider(Modifier.padding(vertical = 8.dp))
             SectionHeader(stringResource(R.string.section_system))
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+                // Idioma por app del sistema: por defecto sigue el idioma del teléfono.
+                ListItem(
+                    leadingContent = { Icon(Icons.Rounded.Translate, contentDescription = null) },
+                    headlineContent = { Text(stringResource(R.string.set_language)) },
+                    supportingContent = { Text(stringResource(R.string.set_language_desc)) },
+                    modifier = Modifier.clickable {
+                        val intent = Intent(
+                            SystemSettings.ACTION_APP_LOCALE_SETTINGS,
+                            Uri.fromParts("package", context.packageName, null),
+                        )
+                        try {
+                            context.startActivity(intent)
+                        } catch (e: ActivityNotFoundException) {
+                            // Algunas capas de fabricante no la exponen; no hay alternativa útil.
+                        }
+                    },
+                )
+            }
             ListItem(
                 leadingContent = { Icon(Icons.Rounded.Shield, contentDescription = null) },
                 headlineContent = { Text(stringResource(R.string.set_role)) },

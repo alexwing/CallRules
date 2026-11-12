@@ -38,6 +38,12 @@ android {
     buildFeatures {
         compose = true
     }
+
+    androidResources {
+        // Genera locales_config.xml a partir de las carpetas values-xx:
+        // idioma por app en Ajustes del sistema (Android 13+).
+        generateLocaleConfig = true
+    }
 }
 
 kotlin {

@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Anruffilter</string>
+
+    <!-- Kachel der Schnelleinstellungen -->
+    <string name="tile_label">Anruffilter</string>
+    <string name="tile_on">Aktiv</string>
+    <string name="tile_off">Pausiert</string>
+
+    <!-- Navigation -->
+    <string name="tab_rules">Regeln</string>
+    <string name="tab_history">Verlauf</string>
+    <string name="title_rules">Regeln</string>
+    <string name="title_history">Verlauf</string>
+    <string name="settings">Einstellungen</string>
+    <string name="new_rule">Neue Regel</string>
+    <string name="back">Zurück</string>
+    <string name="close">Schließen</string>
+    <string name="save">Speichern</string>
+    <string name="cancel">Abbrechen</string>
+    <string name="delete">Löschen</string>
+    <string name="remove">Entfernen</string>
+    <string name="undo">Rückgängig</string>
+    <string name="more_options">Weitere Optionen</string>
+    <string name="move_up">Nach oben</string>
+    <string name="move_down">Nach unten</string>
+    <string name="rule_deleted">Regel gelöscht</string>
+
+    <!-- Status -->
+    <string name="status_inactive_title">Der Filter ist aus</string>
+    <string name="status_inactive_body">Android leitet keine Anrufe an diese App weiter. Stell sie als App für Anruferkennung und Spam-Schutz ein, damit die Regeln funktionieren können.</string>
+    <string name="status_activate">Einschalten</string>
+    <string name="status_on">Filter aktiv</string>
+    <string name="status_off">Filter pausiert</string>
+    <string name="status_home">Heimatland: %1$s</string>
+
+    <!-- Regelliste -->
+    <string name="rules_hint">Regeln werden von oben nach unten geprüft, und die erste passende gewinnt. Passt keine, geht der Anruf durch. Anrufe von deinen Kontakten werden nie gefiltert.</string>
+    <string name="rules_empty_title">Keine Regeln</string>
+    <string name="rules_empty_body">Alle Anrufe kommen durch. Erstelle eine Regel oder starte mit einem Vorschlag.</string>
+    <string name="rule_position">Regel %1$d · %2$s</string>
+    <string name="rule_disabled">aus</string>
+    <string name="quick_add">Schnell hinzufügen</string>
+    <string name="tpl_national">Nur inländische Anrufe</string>
+    <string name="tpl_hidden">Unterdrückte Nummern blockieren</string>
+    <string name="tpl_unknown_silence">Unbekannte stummschalten</string>
+
+    <!-- Beschreibung der Bedingungen -->
+    <string name="cond_countries">Anrufe aus %1$s</string>
+    <string name="cond_countries_more">Anrufe aus %1$s und %2$d weiteren</string>
+    <string name="cond_countries_empty">Kein Land ausgewählt</string>
+    <string name="cond_foreign">Anrufe nicht aus %1$s</string>
+    <string name="cond_prefix">Nummern, die mit %1$s beginnen</string>
+    <string name="cond_hidden">Unterdrückte Nummern</string>
+    <string name="cond_any">Jede unbekannte Nummer</string>
+
+    <!-- Aktionen -->
+    <string name="action_block">Blockieren</string>
+    <string name="action_silence">Stummschalten</string>
+    <string name="action_allow">Zulassen</string>
+    <string name="action_block_past">Blockiert</string>
+    <string name="action_silence_past">Stummgeschaltet</string>
+    <string name="action_allow_past">Zugelassen</string>
+    <string name="action_block_desc">Der Anruf wird abgelehnt, ohne dass das Telefon klingelt.</string>
+    <string name="action_silence_desc">Der Anruf kommt an, aber das Telefon klingelt und vibriert nicht. Du kannst ihn trotzdem auf dem Bildschirm annehmen.</string>
+    <string name="action_allow_desc">Der Anruf geht wie gewohnt durch. Nützlich für Ausnahmen: Leg die Regel über die, die du umgehen willst.</string>
+
+    <!-- Editor -->
+    <string name="editor_new">Neue Regel</string>
+    <string name="editor_edit">Regel bearbeiten</string>
+    <string name="editor_which_calls">Welche Anrufe</string>
+    <string name="editor_what_to_do">Was tun</string>
+    <string name="type_countries">Bestimmte Länder</string>
+    <string name="type_countries_desc">Anrufe aus den Ländern deiner Wahl</string>
+    <string name="type_foreign">International</string>
+    <string name="type_foreign_desc">Alle Anrufe, die nicht aus %1$s kommen</string>
+    <string name="type_prefix">Vorwahl</string>
+    <string name="type_prefix_desc">Nummern, die mit bestimmten Ziffern beginnen</string>
+    <string name="type_hidden">Unterdrückte Nummern</string>
+    <string name="type_hidden_desc">Anrufe ohne sichtbare Nummer</string>
+    <string name="type_any">Beliebige Nummer</string>
+    <string name="type_any_desc">Alle Anrufe, die nicht von deinen Kontakten kommen</string>
+    <string name="countries_add">Länder hinzufügen</string>
+    <string name="countries_required">Wähle mindestens ein Land</string>
+    <string name="prefix_label">Vorwahl</string>
+    <string name="prefix_help">Z. B. +39, +44 7 oder 900. Ohne „+“ wird mit der nationalen Nummer verglichen.</string>
+    <string name="delete_rule_title">Diese Regel löschen?</string>
+
+    <!-- Länderauswahl -->
+    <string name="country_picker_title">Länder wählen</string>
+    <string name="country_picker_title_single">Heimatland</string>
+    <string name="country_search">Land oder Vorwahl suchen</string>
+    <string name="done_count">Fertig (%1$d)</string>
+    <string name="auto_country">Automatisch · %1$s</string>
+    <string name="auto_country_unknown">Automatisch</string>
+    <string name="no_results">Keine Ergebnisse</string>
+
+    <!-- Verlauf -->
+    <string name="history_empty_title">Keine gefilterten Anrufe</string>
+    <string name="history_empty_body">Jeder Anruf, der den Filter passiert, erscheint hier mit der angewendeten Regel.</string>
+    <string name="history_no_rule">Keine Regel hat gepasst</string>
+    <string name="history_filter_off">Filter pausiert</string>
+    <string name="hidden_number">Unterdrückte Nummer</string>
+    <string name="clear_history">Verlauf leeren</string>
+    <string name="clear_history_title">Verlauf leeren?</string>
+    <string name="clear_history_body">Der Verlauf dieser App wird gelöscht. Das Anrufprotokoll deines Telefons bleibt unverändert.</string>
+    <string name="clear">Leeren</string>
+
+    <!-- Einstellungen -->
+    <string name="section_filter">Filter</string>
+    <string name="section_system">System</string>
+    <string name="set_filtering">Filter aktiv</string>
+    <string name="set_filtering_desc">Schalte ihn aus, damit alle Anrufe durchkommen, ohne deine Regeln zu verlieren. Auch in den Schnelleinstellungen verfügbar.</string>
+    <string name="set_calllog">Blockierte Anrufe im Anrufprotokoll behalten</string>
+    <string name="set_calllog_desc">Blockierte Anrufe erscheinen im Anrufprotokoll des Telefons.</string>
+    <string name="set_home">Heimatland</string>
+    <string name="set_home_auto">%1$s · von der SIM</string>
+    <string name="set_home_manual">%1$s · manuell eingestellt</string>
+    <string name="set_language">Sprache</string>
+    <string name="set_language_desc">Folgt der Systemsprache. Für diese App kannst du eine andere wählen.</string>
+    <string name="set_role">App für Anruffilterung</string>
+    <string name="set_role_active">Diese App filtert deine Anrufe</string>
+    <string name="set_role_inactive">Nicht aktiv. Tippe, um sie einzuschalten.</string>
+    <string name="set_about">Version</string>
+</resources>

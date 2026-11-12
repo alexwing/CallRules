@@ -24,6 +24,15 @@ Acciones: **bloquear** (se rechaza sin sonar), **silenciar** (entra sin sonar ni
 El país de referencia sale de la SIM; se puede fijar a mano en Ajustes. Hay un mosaico de
 ajustes rápidos para pausar el filtrado.
 
+## Idiomas
+
+La interfaz está en inglés (`values/`, idioma de respaldo), español, francés, italiano,
+alemán y portugués. Por defecto sigue el idioma del sistema; en Android 13+ se puede elegir
+otro solo para esta app desde Ajustes → Idioma (o desde los ajustes de idioma del sistema).
+AGP genera `locales_config.xml` a partir de las carpetas `values-xx`
+(`generateLocaleConfig` + `res/resources.properties`), así que basta con añadir una carpeta
+nueva para sumar un idioma. Los nombres de países salen del propio sistema en el idioma activo.
+
 Reglas, ajustes e historial se guardan como JSON en el almacenamiento interno de la app
 (`rules.json` y `history.json`).
 
