@@ -80,6 +80,46 @@ To filter calls, the app needs the call screening role. You can grant it from th
 adb shell cmd role add-role-holder android.app.role.CALL_SCREENING com.icaria.callrules
 ```
 
+## Signed releases
+
+The [Release workflow](.github/workflows/release.yml) builds, tests and signs the app when a
+version tag is pushed, and publishes a GitHub release with the APK, the AAB and their SHA-256
+checksums. The version name comes from the tag (`v1.2.0` → `1.2.0`) and the version code from
+the workflow run number. Tags with a hyphen (`v1.2.0-beta1`) are published as pre-releases.
+
+```bash
+git tag v1.0.0
+git push origin v1.0.0
+```
+
+It needs four repository secrets (Settings → Secrets and variables → Actions):
+
+| Secret | Content |
+|---|---|
+| `SIGNING_KEYSTORE_BASE64` | the release keystore, base64-encoded |
+| `SIGNING_STORE_PASSWORD` | keystore password |
+| `SIGNING_KEY_ALIAS` | key alias |
+| `SIGNING_KEY_PASSWORD` | key password |
+
+To create a keystore and upload the secrets with the GitHub CLI:
+
+```bash
+keytool -genkeypair -keystore callrules-release.jks -storetype PKCS12 \
+  -alias callrules -keyalg RSA -keysize 4096 -validity 10000
+base64 -w0 callrules-release.jks | gh secret set SIGNING_KEYSTORE_BASE64
+gh secret set SIGNING_STORE_PASSWORD
+gh secret set SIGNING_KEY_ALIAS --body callrules
+gh secret set SIGNING_KEY_PASSWORD
+```
+
+Keep the keystore and its passwords backed up somewhere safe and outside the repository:
+updates must be signed with the same key, and a lost key means users have to uninstall the app
+to install a new version.
+
+The same signing setup works locally: if `SIGNING_KEYSTORE_PATH`, `SIGNING_STORE_PASSWORD`,
+`SIGNING_KEY_ALIAS` and `SIGNING_KEY_PASSWORD` are set, `./gradlew :app:assembleRelease`
+produces a signed APK; without them it produces an unsigned one.
+
 ## Project structure
 
 ```

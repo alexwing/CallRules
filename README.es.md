@@ -80,6 +80,26 @@ app (botón «Activar») o por adb:
 adb shell cmd role add-role-holder android.app.role.CALL_SCREENING com.icaria.callrules
 ```
 
+## Releases firmadas
+
+El [workflow Release](.github/workflows/release.yml) compila, prueba y firma la app al subir
+un tag de versión, y publica una release de GitHub con el APK, el AAB y sus sumas SHA-256. El
+nombre de versión sale del tag (`v1.2.0` → `1.2.0`) y el código de versión del número de
+ejecución del workflow. Los tags con guion (`v1.2.0-beta1`) se publican como pre-release.
+
+```bash
+git tag v1.0.0
+git push origin v1.0.0
+```
+
+Necesita cuatro secretos del repositorio (Settings → Secrets and variables → Actions):
+`SIGNING_KEYSTORE_BASE64` (el keystore en base64), `SIGNING_STORE_PASSWORD`,
+`SIGNING_KEY_ALIAS` y `SIGNING_KEY_PASSWORD`. Los comandos para crear el keystore y subir los
+secretos con `gh` están en el [README en inglés](README.md#signed-releases).
+
+Guarda el keystore y sus contraseñas fuera del repositorio y con copia de seguridad: las
+actualizaciones deben ir firmadas con la misma clave.
+
 ## Estructura
 
 ```
