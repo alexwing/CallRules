@@ -25,8 +25,8 @@ class RuleEngineTest {
 
     @Test
     fun `numero movil italiano se bloquea por pais`() {
-        assertEquals(RuleAction.BLOCK, decide("+393441932623", blockItaly).action)
-        assertEquals(RuleAction.BLOCK, decide("0039 344 193 2623", blockItaly).action)
+        assertEquals(RuleAction.BLOCK, decide("+393123456789", blockItaly).action)
+        assertEquals(RuleAction.BLOCK, decide("0039 312 345 6789", blockItaly).action)
     }
 
     @Test
@@ -68,9 +68,9 @@ class RuleEngineTest {
         val hiddenRule = Rule(condition = Condition.Hidden, action = RuleAction.BLOCK)
         assertEquals(RuleAction.BLOCK, decide(null, hiddenRule).action)
         assertEquals(RuleAction.BLOCK, decide("", hiddenRule).action)
-        assertEquals(RuleAction.BLOCK, decide("+393441932623", hiddenRule, hidden = true).action)
+        assertEquals(RuleAction.BLOCK, decide("+393123456789", hiddenRule, hidden = true).action)
         assertEquals(RuleAction.ALLOW, decide(null, blockItaly, blockForeign).action)
-        assertEquals(RuleAction.ALLOW, decide("+393441932623", blockItaly, hidden = true).action)
+        assertEquals(RuleAction.ALLOW, decide("+393123456789", blockItaly, hidden = true).action)
     }
 
     @Test
@@ -89,7 +89,7 @@ class RuleEngineTest {
     @Test
     fun `prefijo vacio o sin digitos no coincide nunca`() {
         val empty = Rule(condition = Condition.Prefix(" + "), action = RuleAction.BLOCK)
-        assertEquals(RuleAction.ALLOW, decide("+393441932623", empty).action)
+        assertEquals(RuleAction.ALLOW, decide("+393123456789", empty).action)
     }
 
     @Test
@@ -97,10 +97,10 @@ class RuleEngineTest {
         val allowRome = Rule(id = "rome", condition = Condition.Prefix("+39 06"), action = RuleAction.ALLOW)
         assertEquals(RuleAction.ALLOW, decide("+390612345678", allowRome, blockItaly).action)
         assertEquals("rome", decide("+390612345678", allowRome, blockItaly).rule?.id)
-        assertEquals(RuleAction.BLOCK, decide("+393441932623", allowRome, blockItaly).action)
+        assertEquals(RuleAction.BLOCK, decide("+393123456789", allowRome, blockItaly).action)
 
         val disabled = blockItaly.copy(enabled = false)
-        assertEquals(RuleAction.ALLOW, decide("+393441932623", disabled).action)
+        assertEquals(RuleAction.ALLOW, decide("+393123456789", disabled).action)
     }
 
     @Test
@@ -112,7 +112,7 @@ class RuleEngineTest {
 
     @Test
     fun `limpieza de numeros`() {
-        assertEquals("+393441932623", PhoneNumbers.clean("0039 (344) 193-2623"))
+        assertEquals("+393123456789", PhoneNumbers.clean("0039 (312) 345-6789"))
         assertEquals("+44", PhoneNumbers.clean("+4+4"))
         assertEquals("", PhoneNumbers.clean("abc"))
     }
