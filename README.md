@@ -1,69 +1,71 @@
-# Filtro de llamadas
+# Call Filter
 
-App Android que filtra las llamadas entrantes con reglas propias: bloquear países concretos,
-quedarse solo con las llamadas nacionales, cortar los números ocultos, silenciar prefijos...
-Está hecha en Kotlin con Jetpack Compose y Material 3, y se integra con el sistema: color
-dinámico (Material You), tema oscuro, icono temático, mosaico de ajustes rápidos e idioma por app.
+*[Leer en español](README.es.md)*
+
+An Android app that filters incoming calls with your own rules: block specific countries,
+allow domestic calls only, reject hidden numbers, silence prefixes... It's built with Kotlin,
+Jetpack Compose and Material 3, and it fits into the system: dynamic color (Material You),
+dark theme, themed icon, a quick settings tile and per-app language.
 
 <p align="center">
-  <img src="docs/screenshots/rules.png" width="200" alt="Lista de reglas" />
-  <img src="docs/screenshots/editor.png" width="200" alt="Editor de reglas" />
-  <img src="docs/screenshots/countries.png" width="200" alt="Selector de países" />
-  <img src="docs/screenshots/settings.png" width="200" alt="Ajustes" />
+  <img src="docs/screenshots/rules.png" width="200" alt="Rule list" />
+  <img src="docs/screenshots/editor.png" width="200" alt="Rule editor" />
+  <img src="docs/screenshots/countries.png" width="200" alt="Country picker" />
+  <img src="docs/screenshots/settings.png" width="200" alt="Settings" />
 </p>
-<p align="center"><sub>Reglas · Editor · Selector de países · Ajustes</sub></p>
+<p align="center"><sub>Rules · Editor · Country picker · Settings</sub></p>
 
-## Cómo funciona
+## How it works
 
-La app usa la API del sistema `CallScreeningService`. Con el rol de «identificación de llamadas
-y spam», Android le consulta cada llamada entrante que no sea de un contacto guardado, y la app
-decide si la deja pasar, la silencia o la rechaza.
+The app uses Android's `CallScreeningService` API. Once it holds the "caller ID & spam" role,
+Android asks it about every incoming call that isn't from a saved contact, and the app decides
+whether to let it through, silence it or reject it.
 
-Las reglas se evalúan de arriba abajo y gana la primera activa que coincide. Si ninguna
-coincide, la llamada pasa.
+Rules are checked from top to bottom and the first enabled rule that matches wins. If none
+match, the call goes through.
 
-| Condición | Coincide con |
+| Condition | Matches |
 |---|---|
-| Países concretos | números de los países elegidos (país detectado con libphonenumber) |
-| Internacionales | cualquier país distinto del país de referencia («solo llamadas nacionales») |
-| Prefijo | números que empiezan por unos dígitos; con `+` se compara con el formato internacional, sin `+` con el número nacional |
-| Números ocultos | llamadas sin número o con el número restringido |
-| Cualquier número | todas las llamadas que llegan al filtro |
+| Specific countries | numbers from the selected countries (country detected with libphonenumber) |
+| International | any country other than your home country ("domestic calls only") |
+| Prefix | numbers starting with some digits; with `+` it's compared with the international format, without `+` with the national number |
+| Hidden numbers | calls with no number or a restricted number |
+| Any number | every call that reaches the filter |
 
-| Acción | Efecto |
+| Action | Effect |
 |---|---|
-| Bloquear | la llamada se rechaza sin que suene el teléfono |
-| Silenciar | la llamada entra sin sonar ni vibrar; se puede coger desde la pantalla |
-| Permitir | pasa con normalidad; sirve para hacer excepciones por encima de otras reglas |
+| Block | the call is rejected without the phone ringing |
+| Silence | the call comes in without ringing or vibrating; you can still answer it from the screen |
+| Allow | the call goes through as usual; use it for exceptions above other rules |
 
-Otras funciones:
+Other features:
 
-- **País de referencia**: sale de la SIM y se puede fijar a mano. Es el que define qué es
-  «nacional».
-- **Registro**: cada llamada que pasa por el filtro, con la regla que se le aplicó.
-- **Ajustes rápidos**: un mosaico para pausar o reanudar el filtrado sin perder las reglas.
-- **Logcat**: cada decisión se registra con el tag `CallRules`.
+- **Home country**: taken from the SIM, and can be set manually. It defines what counts as
+  "domestic".
+- **History**: every call that goes through the filter, with the rule that was applied.
+- **Quick settings**: a tile to pause or resume filtering without losing your rules.
+- **Logcat**: every decision is logged with the `CallRules` tag.
 
-## Privacidad
+## Privacy
 
-Todo se queda en el teléfono. La app no pide permiso de internet, contactos ni registro de
-llamadas. Reglas, ajustes e historial se guardan como JSON en su almacenamiento interno
-(`rules.json` y `history.json`).
+Everything stays on the phone. The app doesn't request internet, contacts or call log
+permissions. Rules, settings and history are stored as JSON in its internal storage
+(`rules.json` and `history.json`).
 
-## Idiomas
+## Languages
 
-Inglés (idioma de respaldo), español, francés, italiano, alemán y portugués. Por defecto sigue
-el idioma del sistema; en Android 13+ se puede elegir otro solo para esta app desde
-Ajustes → Idioma. AGP genera `locales_config.xml` a partir de las carpetas `values-xx`
-(`generateLocaleConfig` + `res/resources.properties`), así que basta con añadir una carpeta
-para sumar un idioma. Los nombres de los países salen del propio sistema en el idioma activo.
+English (fallback language), Spanish, French, Italian, German and Portuguese. By default the
+app follows the system language; on Android 13+ you can pick a different one just for this app
+from Settings → Language. AGP generates `locales_config.xml` from the `values-xx` folders
+(`generateLocaleConfig` + `res/resources.properties`), so adding a language only takes a new
+folder. Country names come from the system itself, in the active language.
 
-## Requisitos
+## Requirements
 
-- Android 10 (API 29) o superior.
-- Para compilar: JDK 17 y el SDK de Android con la plataforma 36.
+- Android 10 (API 29) or later.
+- To build: JDK 17 and the Android SDK with platform 36.
 
-## Compilar e instalar
+## Build and install
 
 ```bash
 ./gradlew :app:testDebugUnitTest
@@ -71,22 +73,22 @@ para sumar un idioma. Los nombres de los países salen del propio sistema en el 
 adb install -r app/build/outputs/apk/debug/app-debug.apk
 ```
 
-Para que filtre, la app debe tener el rol de filtrado de llamadas. Se pide desde la propia
-app (botón «Activar») o por adb:
+To filter calls, the app needs the call screening role. You can grant it from the app itself
+(the "Turn on" button, which opens the system dialog) or with adb:
 
 ```bash
 adb shell cmd role add-role-holder android.app.role.CALL_SCREENING com.icaria.callrules
 ```
 
-## Estructura
+## Project structure
 
 ```
 app/src/main/java/com/icaria/callrules/
-  data/      modelo (reglas, ajustes, historial) y repositorio JSON
-  engine/    análisis de números (libphonenumber), motor de reglas, país de referencia
+  data/      model (rules, settings, history) and JSON repository
+  engine/    number analysis (libphonenumber), rule engine, home country
   service/   RuleScreeningService (CallScreeningService)
-  tile/      mosaico de ajustes rápidos
-  ui/        pantallas Compose: reglas, editor, registro, ajustes, selector de países
-app/src/test/  tests JVM del motor de reglas y del formato JSON
-docs/screenshots/  capturas del README
+  tile/      quick settings tile
+  ui/        Compose screens: rules, editor, history, settings, country picker
+app/src/test/  JVM tests for the rule engine and the JSON format
+docs/screenshots/  README screenshots
 ```
